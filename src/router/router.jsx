@@ -1,10 +1,14 @@
-import {createBrowserRouter} from "react-router";
+import { createBrowserRouter } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
 import Home from "../Components/Pages/Home/Home";
 import Services from "../Components/Pages/Services/Services";
 import BrandsMarquee from "../Components/Pages/BrandsMarquee/BrandsMarquee";
 import WhyWeAreBest from "../Components/Pages/WhyWeAreBest/WhyWeAreBest";
 import BeMerchant from "../Components/Pages/Home/BeMerchant/BeMerchant";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../Components/Pages/Authentication/Login/Login";
+import Register from "../Components/Pages/Authentication/Register/Register";
+import Coverage from "../Components/Pages/Coverage/Coverage";
 
 
 
@@ -33,7 +37,30 @@ export const router = createBrowserRouter([
       {
         path: "be-merchant",
         Component: BeMerchant
-      }
+      },
+      {
+        path: "coverage",
+        Component: Coverage
+      },
+
+      // {
+      //   path:"",
+      //   Component:
+      // },
     ]
-  }
+  },
+  {
+    path: "/",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "login",
+        Component: Login
+      },
+      {
+        path:"register",
+        Component: Register
+      },
+    ]
+  },
 ]);

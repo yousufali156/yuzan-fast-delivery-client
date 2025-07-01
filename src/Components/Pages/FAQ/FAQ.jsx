@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
+
 // You might need to install framer-motion: npm install framer-motion
 
 // Dummy data for the FAQ section

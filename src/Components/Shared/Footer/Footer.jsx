@@ -11,7 +11,7 @@ import YuzanLogo from "../YuzanLogo/YuzanLogo";
 
 const Footer = () => {
     return (
-        <footer className=" text-sm">
+        <footer className="text-sm">
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="flex flex-col md:flex-row justify-between gap-12">
 

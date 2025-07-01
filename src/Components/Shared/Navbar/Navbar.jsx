@@ -16,7 +16,7 @@ function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
 
         {/* Logo */}
-        <YuzanLogo/>
+        <YuzanLogo />
 
         {/* Mobile Toggle & Theme */}
         <div className="md:hidden flex items-center gap-3">
@@ -31,11 +31,15 @@ function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-sm font-medium items-center">
           <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
+          <li><NavLink to="/coverage" className={navLinkClass}>Coverage</NavLink></li>
           <li><NavLink to="/add-task" className={navLinkClass}>Add Task</NavLink></li>
           <li><NavLink to="/browse-tasks" className={navLinkClass}>Browse Tasks</NavLink></li>
           <li><NavLink to="/featured-tasks" className={navLinkClass}>Featured Tasks</NavLink></li>
           <li><NavLink to="/dashboard" className={navLinkClass}>Dashboard</NavLink></li>
           <li><NavLink to="/about" className={navLinkClass}>About</NavLink></li>
+          <li><NavLink to="/login" className={navLinkClass}>Login</NavLink></li>
+          <li><NavLink to="/register" className={navLinkClass}>Register</NavLink></li>
+
           {/* <ThemeToggle /> */}
         </ul>
       </div>
@@ -50,6 +54,8 @@ function Navbar() {
             <li><NavLink to="/featured-tasks" onClick={toggleMobileMenu}>Featured Tasks</NavLink></li>
             <li><NavLink to="/dashboard" onClick={toggleMobileMenu}>Dashboard</NavLink></li>
             <li><NavLink to="/about" onClick={toggleMobileMenu}>About</NavLink></li>
+            <li><NavLink to="/login" className={navLinkClass}>Login</NavLink></li>
+            <li><NavLink to="/register" className={navLinkClass}>Register</NavLink></li>
           </ul>
         </div>
       )}

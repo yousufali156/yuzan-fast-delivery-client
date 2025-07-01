@@ -3,8 +3,7 @@ import { Link } from 'react-router';
 
 const YuzanLogo = () => {
     return (
-        <div>
-            
+        <div>         
           <Link to="/" className="flex items-center gap-2">
           <img
             src="/yousuf-logo.png"

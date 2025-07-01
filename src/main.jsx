@@ -8,20 +8,24 @@ import { router } from './router/router.jsx';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import AuthProvider from './Context/AuthContext/AuthProvider.jsx';
 
 // ✅ Create a wrapper component to use useEffect
 const AppWrapper = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 800, 
       once: true
     });
   }, []);
 
   return (
-    <div className="urbanist-font">
-      <RouterProvider router={router} />
+     <div className="urbanist-font max-w-7xl mx-auto">
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </div>
+   
   );
 };
 
