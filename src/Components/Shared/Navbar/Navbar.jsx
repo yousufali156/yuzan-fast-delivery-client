@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import YuzanLogo from '../YuzanLogo/YuzanLogo';
+import useAuth from '../../../Hooks/useAuth';
 // import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
+  const {user} =useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -32,10 +34,15 @@ function Navbar() {
         <ul className="hidden md:flex space-x-6 text-sm font-medium items-center">
           <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
           <li><NavLink to="/coverage" className={navLinkClass}>Coverage</NavLink></li>
-          <li><NavLink to="/add-task" className={navLinkClass}>Add Task</NavLink></li>
-          <li><NavLink to="/browse-tasks" className={navLinkClass}>Browse Tasks</NavLink></li>
-          <li><NavLink to="/featured-tasks" className={navLinkClass}>Featured Tasks</NavLink></li>
-          <li><NavLink to="/dashboard" className={navLinkClass}>Dashboard</NavLink></li>
+          <li><NavLink to="/send-parcel" className={navLinkClass}>Send Parcel</NavLink></li>
+
+          {
+            user && <>
+                      <li><NavLink to="/dashboard" className={navLinkClass}>Dashboard</NavLink></li>
+
+            </>
+          }
+
           <li><NavLink to="/about" className={navLinkClass}>About</NavLink></li>
           <li><NavLink to="/login" className={navLinkClass}>Login</NavLink></li>
           <li><NavLink to="/register" className={navLinkClass}>Register</NavLink></li>
@@ -49,7 +56,7 @@ function Navbar() {
         <div className="md:hidden border-t bg-base-300">
           <ul className="flex flex-col px-6 py-4 space-y-4 text-sm font-medium">
             <li><NavLink to="/" onClick={toggleMobileMenu}>Home</NavLink></li>
-            <li><NavLink to="/add-task" onClick={toggleMobileMenu}>Add Task</NavLink></li>
+            <li><NavLink to="/send-parcel" onClick={toggleMobileMenu}>Send Parcel</NavLink></li>
             <li><NavLink to="/browse-tasks" onClick={toggleMobileMenu}>Browse Tasks</NavLink></li>
             <li><NavLink to="/featured-tasks" onClick={toggleMobileMenu}>Featured Tasks</NavLink></li>
             <li><NavLink to="/dashboard" onClick={toggleMobileMenu}>Dashboard</NavLink></li>

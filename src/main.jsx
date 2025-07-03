@@ -1,4 +1,5 @@
 import { StrictMode, useEffect } from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import {
@@ -14,18 +15,20 @@ import AuthProvider from './Context/AuthContext/AuthProvider.jsx';
 const AppWrapper = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800, 
+      duration: 800,
       once: true
     });
   }, []);
-
+  const queryClient = new QueryClient();
   return (
-     <div className="urbanist-font max-w-7xl mx-auto">
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
+    <div className="urbanist-font max-w-7xl mx-auto">
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </QueryClientProvider>
     </div>
-   
+
   );
 };
 
