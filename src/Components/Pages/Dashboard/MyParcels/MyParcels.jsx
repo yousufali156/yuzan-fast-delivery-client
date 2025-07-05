@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
 import { format } from 'date-fns';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -19,6 +20,7 @@ const MyParcels = () => {
     const [updateParcel, setUpdateParcel] = useState(null);
     const [payParcel, setPayParcel] = useState(null);
     const [selectedMethod, setSelectedMethod] = useState('Stripe'); // 🔧 ADDED HERE
+    const navigate = useNavigate();
 
     const { data: parcels = [], refetch } = useQuery({
         queryKey: ['myParcels', user?.email],
@@ -53,23 +55,8 @@ const MyParcels = () => {
     };
 
     const handlePayment = async () => {
-        if (!payParcel) return;
-        try {
-            const res = await axiosSecure.patch(`/parcels/${payParcel._id}`, {
-                paid: true,
-                paymentMethod: selectedMethod,
-                transactionId: `demo_txn_${Date.now()}`,
-                paymentDate: new Date().toISOString(),
-                status: 'In Transit'
-            });
-            if (res.data?.message) {
-                toast.success('Payment recorded successfully!');
-                setPayParcel(null);
-                refetch();
-            }
-        } catch (err) {
-            toast.error('Failed to record payment.');
-        }
+        navigate(`/dashboard/payment/${id}`)
+
     };
 
     const totalPages = Math.ceil(filteredParcels.length / ITEMS_PER_PAGE);
@@ -137,15 +124,14 @@ const MyParcels = () => {
                                         {parcel.paid ? (
                                             <span className="badge bg-green-200 text-green-800">Paid</span>
                                         ) : (
-                                            <button
-                                                onClick={() => setPayParcel(parcel)}
-                                                className="btn btn-xs btn-accent"
-                                            >
-                                                Pay
-                                            </button>
+                                            <span className="badge bg-red-200 text-red-800">Unpaid</span>
                                         )}
                                     </td>
-                                    <td>{parcel.createdAt ? format(new Date(parcel.createdAt), 'PPpp') : 'N/A'}</td>
+                                    <td>
+                                        {parcel.createdAt
+                                            ? format(new Date(parcel.createdAt), 'PPpp')
+                                            : 'N/A'}
+                                    </td>
                                     <td className="flex flex-col md:flex-row gap-2 justify-center">
                                         <button
                                             onClick={() => setSelectedParcel(parcel)}
@@ -153,12 +139,16 @@ const MyParcels = () => {
                                         >
                                             View
                                         </button>
-                                        <button
-                                            onClick={() => setUpdateParcel(parcel)}
-                                            className="btn btn-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
-                                        >
-                                            Update
-                                        </button>
+
+                                        {!parcel.paid && (
+                                            <button
+                                                onClick={() => navigate(`/dashboard/payment/${parcel._id}`)}
+                                                className="btn btn-sm bg-green-100 text-green-700 hover:bg-green-200"
+                                            >
+                                                Pay
+                                            </button>
+                                        )}
+
                                         <button
                                             onClick={() => handleDelete(parcel._id)}
                                             className="btn btn-sm bg-red-100 text-red-600 hover:bg-red-200"
@@ -169,6 +159,8 @@ const MyParcels = () => {
                                 </tr>
                             ))}
                         </tbody>
+
+
                     </table>
 
                     {/* Pagination */}
@@ -195,7 +187,7 @@ const MyParcels = () => {
                         <p><strong>Title:</strong> {selectedParcel.title}</p>
                         <p><strong>Status:</strong> {selectedParcel.status}</p>
                         <p><strong>Cost:</strong> ৳{selectedParcel.cost}</p>
-                        <p><strong>Booked On:</strong> {format(new Date(selectedParcel.createdAt), 'PPpp')}</p>
+                        <p><strong>Booked On:</strong> {format(new Date(selectedParcel.createdAt), 'Pp')}</p>
                         <div className="mt-4 text-right">
                             <button
                                 onClick={() => setSelectedParcel(null)}
