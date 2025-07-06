@@ -38,7 +38,7 @@ const PaymentForm = () => {
       setProcessing(false);
     }
   };
-
+// this is true 
   return (
     <div className="max-w-md mx-auto bg-white shadow-md p-6 rounded-md">
       <h2 className="text-xl font-semibold mb-4">💳 Enter your card details</h2>
