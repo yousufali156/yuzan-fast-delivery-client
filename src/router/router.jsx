@@ -14,6 +14,8 @@ import PrivateRoute from "../Routes/PrivateRoute/PrivateRoute";
 import MyParcels from "../Components/Pages/Dashboard/MyParcels/MyParcels";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Payment from "../Components/Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Components/Pages/Dashboard/PaymentHistory/PaymentHistory";
+import TrackParcel from "../Components/Pages/Dashboard/TrackParcel/TrackParcel";
 
 
 
@@ -82,14 +84,22 @@ export const router = createBrowserRouter([
       <DashboardLayout></DashboardLayout>
     </PrivateRoute>,
     children:[
-      {
+     {
         path: 'myParcels',
         Component: MyParcels
       },
       {
-        path: 'payment/:id',
+        path: 'payment/:parcelId',
         Component: Payment
       },
+      {
+        path: 'paymentHistory',
+        Component: PaymentHistory
+      },
+      {
+        path: 'track',
+        Component: TrackParcel
+      }
       
 
     ]
