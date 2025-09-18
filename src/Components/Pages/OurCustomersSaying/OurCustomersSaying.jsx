@@ -9,45 +9,123 @@ const testimonials = [
   {
     name: 'Awlad Hossin',
     title: 'Senior Product Designer',
-    text: 'A posture corrector works by providing support and gentle alignment to your shoulders, back, and spine, encouraging you to maintain proper posture throughout the day.',
+    text: 'The Chicken Biryani from Yummy Food is amazing! The delivery was so fast that the food arrived hot and fresh. Perfect for my busy life!',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=AwladHossin'
   },
   {
     name: 'Rasel Ahamed',
     title: 'CTO',
-    text: 'A posture corrector helps you maintain your posture during long work hours and reduces back pain effectively.',
+    text: 'The app is very smooth and it\'s easy to track orders. This is the best food delivery service I have used so far!',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=RaselAhamed'
   },
   {
     name: 'Nasir Uddin',
     title: 'CEO',
-    text: 'Wearing a corrector regularly improved my posture and relieved my lower back strain.',
+    text: 'I now order healthy lunches for the office from here. The salads are always fresh and the grilled chicken is great. Simply amazing!',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=NasirUddin'
   },
   {
     name: 'Tanvir Ahmed',
     title: 'Lead Engineer',
-    text: 'Helps align posture while working from home. Great value!',
+    text: 'Their beef khichuri feels just like homemade. After long coding sessions, this is my first choice. The service is also excellent.',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=TanvirAhmed'
   },
   {
     name: 'Shahidul Islam',
     title: 'Fitness Coach',
-    text: 'Perfect for gym-goers who need extra back support.',
+    text: 'There are great options here for fitness lovers. The protein-packed meals are very nutritious and delicious. I am very satisfied.',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=ShahidulIslam'
   },
   {
     name: 'Samiul Alam',
     title: 'Data Analyst',
-    text: 'Very helpful in managing my spinal alignment throughout my day.',
+    text: 'Getting a quick delivery during busy office hours makes my day so much easier. I love their wraps and sandwiches.',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=SamiulAlam'
   },
   {
     name: 'Imran Kabir',
     title: 'Digital Marketer',
-    text: 'It gave me better posture in just a week!',
+    text: 'I find the best mutton kacchi in town right here! I have received fresh and aromatic food every single time.',
     avatar: 'https://avatar.iran.liara.run/public/boy?username=ImranKabir'
   },
+  {
+    name: 'Farhana Akter',
+    title: 'UI/UX Designer',
+    text: 'As a UI/UX designer, I appreciate a good app. Ordering from Yummy Food is very easy and user-friendly.',
+    avatar: 'https://avatar.iran.liara.run/public/girl?username=FarhanaAkter'
+  },
+  {
+    name: 'Mizanur Rahman',
+    title: 'Software Engineer',
+    text: 'No worries about sudden midnight cravings anymore. Yummy Food\'s burgers and fries are always available and delivered quickly!',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=MizanurRahman'
+  },
+  {
+    name: 'Nusrat Jahan',
+    title: 'Teacher',
+    text: 'The food tastes just like mom\'s home cooking. My whole family loves their Bengali thali.',
+    avatar: 'https://avatar.iran.liara.run/public/girl?username=NusratJahan'
+  },
+  {
+    name: 'Jahid Hasan',
+    title: 'Content Creator',
+    text: 'While editing videos, Yummy Food\'s snacks and coffee keep me refreshed. The delivery partners are also very polite.',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=JahidHasan'
+  },
+  {
+    name: 'Mahmudul Hasan',
+    title: 'Business Consultant',
+    text: 'Truly professional service. The packaging is always great and the food arrives on time. Very reliable for client meetings.',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=MahmudulHasan'
+  },
+  {
+    name: 'Afsana Mim',
+    title: 'Nurse',
+    text: 'After long shifts at the hospital, Yummy Food is my go-to for hot and healthy meals. Their soup is very comforting.',
+    avatar: 'https://avatar.iran.liara.run/public/girl?username=AfsanaMim'
+  },
+  {
+    name: 'Tariq Aziz',
+    title: 'Entrepreneur',
+    text: 'Such a wide variety of food! From pizza and pasta to healthy salads and desserts—everything is available in one app.',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=TariqAziz'
+  },
+  {
+    name: 'Sumaiya Rahman',
+    title: 'Medical Student',
+    text: 'Yummy Food saves me a lot of cooking time during exam prep. Their affordable meal plans are very good.',
+    avatar: 'https://avatar.iran.liara.run/public/girl?username=SumaiyaRahman'
+  },
+  {
+    name: 'Arif Chowdhury',
+    title: 'Project Manager',
+    text: 'This is now our first choice for office lunch. Ordering food for the whole team is very easy now. Everyone likes their options.',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=ArifChowdhury'
+  },
+  {
+    name: 'Tasnim Ahmed',
+    title: 'Graphic Designer',
+    text: 'The app looks beautiful and is comfortable to use. The food pictures are so attractive that they make you want to eat right away!',
+    avatar: 'https://avatar.iran.liara.run/public/girl?username=TasnimAhmed'
+  },
+  {
+    name: 'Mehedi Hasan',
+    title: 'Researcher',
+    text: 'I was looking for a reliable and affordable food delivery service, and Yummy Food is just perfect. The food is very tasty.',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=MehediHasan'
+  },
+  {
+    name: 'Sadia Khatun',
+    title: 'HR Manager',
+    text: 'Arranging team lunches for our department is much easier now. Their bulk order facility is very helpful!',
+    avatar: 'https://avatar.iran.liara.run/public/girl?username=SadiaKhatun'
+  },
+  {
+    name: 'Rakibul Islam',
+    title: 'Freelancer',
+    text: 'Working from home is much more enjoyable when you don\'t have to worry about cooking. Yummy Food always delivers hot food quickly.',
+    avatar: 'https://avatar.iran.liara.run/public/boy?username=RakibulIslam'
+  }
 ];
 
 const OurCustomersSaying = () => {
