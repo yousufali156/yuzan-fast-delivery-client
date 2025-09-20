@@ -7,7 +7,11 @@ import { Carousel } from 'react-responsive-carousel';
 
 const Banner = () => {
     return (
-        <Carousel autoPlay={true} infiniteLoop={true} interval={3000} transitionTime={500} showThumbs={false} showStatus={false}  className="banner-carousel">
+        <Carousel autoPlay={true} infiniteLoop={true} interval={3000} transitionTime={500} showThumbs={false} showStatus={false} className="banner-carousel">
+            <div>
+
+                <p className="legend">Welcome to Youzan Family</p>
+            </div>
             <div>
                 <img src={BannerImage1} />
                 <p className="legend">Your Parcel is on the way!</p>
@@ -19,6 +23,10 @@ const Banner = () => {
             <div>
                 <img src={BannerImage3} />
                 <p className="legend">Your Satisfaction is Our Priority</p>
+            </div>
+            <div>
+
+                <p className="legend">Welcome to Youzan Family</p>
             </div>
         </Carousel>
     );
